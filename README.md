@@ -4,8 +4,18 @@
 完整教程见[此处](https://lbbxsxlz.github.io/2020/10/13/checkinstall-centos/)
 
 checkinstall-1.6.2源码下载，
+```
 git clone http://checkinstall.izto.org/checkinstall.git
-或者 wget https://asic-linux.com.mx/~izto/checkinstall/files/source/checkinstall-1.6.2.tar.gz
+```
+
+或者
+
+```
+wget https://asic-linux.com.mx/~izto/checkinstall/files/source/checkinstall-1.6.2.tar.gz
+```
+
+## install
+make;make install即可
 
 ## centos7中使用checkin stall制作rpm包
 
@@ -24,6 +34,7 @@ INSTYPE="R"
 　　ERROR: ld.so: object '/usr/local/lib64/installwatch.so' from LD_PRELOAD cannot be preloaded: ignored.
 
 通过以下命令解决
+
 ```
 echo "/usr/local/lib64" >/etc/ld.so.conf.d/installwatch.conf
 ln -s /usr/local/lib/installwatch.so /usr/local/lib64/installwatch.so
@@ -32,6 +43,7 @@ ldconfig
 
 再次，使用hello程序包验证checkinstall工具
 下载hello测试包,然后使用checkinstall生成RPM包
+
 ```
 wget http://ftp.gnu.org/gnu/hello/hello-2.10.tar.gz
 tar zxvf hello-2.10.tar.gz
@@ -44,6 +56,7 @@ checkinstall -y  --backup=no --install=no --pkgname=hello --pkgversion=1.0 --pkg
 the RPM source directory tree:
 
 可以用以下命令修复问题
+
 
 ```
 mkdir -p /root/rpmbuild/SOURCES
