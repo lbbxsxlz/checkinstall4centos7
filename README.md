@@ -17,7 +17,7 @@ wget https://asic-linux.com.mx/~izto/checkinstall/files/source/checkinstall-1.6.
 ## install
 make;make install即可
 
-## centos7中使用checkin stall制作rpm包
+## centos7中使用checkinstall制作rpm包
 
 首先，修改/usr/local/lib/checkinstall/checkinstallrc文件
 ```
